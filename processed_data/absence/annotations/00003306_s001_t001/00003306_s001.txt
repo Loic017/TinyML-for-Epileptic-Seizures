@@ -1,0 +1,15 @@
+CLINICAL HISTORY: This is a 13-year-old female with daydreaming spells for two years.
+MEDICATIONS: None.
+INTRODUCTION: Digital video EEG is performed in the lab using standard 10-20 system of electrode placement with one channel of EKG. Hyperventilation and photic stimulation were performed.  This child had multiple absence seizures, some of which were clinically apparent even without cognitive testing.
+DESCRIPTION OF THE RECORD: In wakefulness, the background is well organized with an 11 Hz, 50 uV posterior dominant rhythm and a small amount of low voltage, frontocentral beta activity.  LAMBDA activity is seen as is central MU.  In some cases the LAMBDA is somewhat asymmetric.
+The major abnormality in this record is absence seizures characterized by bursts of rhythmic, high amplitude frontally predominant 3.5 to 5 Hz spike and wave activity with discharges lasting up to 10 seconds.  Clinical correlates of these three discharges include impaired recall of a code word and eye blinking, but during the fourth seizure, the patient actually seemed to gesture during her seizure.
+Other abnormalities include occipitally predominant 4 Hz spike and wave activity, which seems to be bilateral and isolated, right or left temporal spike and slow wave complexes.  The major of the independent, right or left temporal spike and slow wave complexes were simple in nature, as may be seen in benign disorders, but in one case there was some additional focal slowing from the right.
+Hyperventilation did appear to elicit one of these spells, although the absence seizures occurred spontaneously.  Photic stimulation elicits vigorous bilateral driving.
+HR:  96 BPM.
+IMPRESSION: Abnormal EEG due to:
+Four absence seizures lasting ten seconds in duration and associated with impairment of awareness.
+CLINICAL CORRELATION: These findings were communicated by the tech on the day of the record in that this child is currently not treated with seizure medications.
+
+
+
+
