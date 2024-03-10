@@ -92,3 +92,53 @@ filters *= enorm[:, np.newaxis]
 plt.figure(figsize=(15, 4))
 for n in range(filters.shape[0]):
     plt.plot(filters[n])
+
+
+# image stuff
+# %% capture
+image_train = []
+for i, data in enumerate(train_db_mean):
+    f = plt.figure(frameon=False)
+    ax = plt.Axes(f, [0.0, 0.0, 1.0, 1.0])
+    ax.set_axis_off()
+    f.add_axes(ax)
+    img = librosa.display.specshow(data, sr=250, x_axis="time", y_axis="mel")
+    plt.savefig("image_process.png")
+
+    img = Image.open("image_process.png")
+    img = img.resize((120, 160))
+    image_train.append(img)
+    plt.close("all")
+image_train = np.array(image_train)
+
+image_val = []
+for i, data in enumerate(val_db_mean):
+    f = plt.figure(frameon=False)
+    ax = plt.Axes(f, [0.0, 0.0, 1.0, 1.0])
+    ax.set_axis_off()
+    f.add_axes(ax)
+    img = librosa.display.specshow(data, sr=250, x_axis="time", y_axis="mel")
+    plt.savefig("image_process.png")
+
+    img = Image.open("image_process.png")
+    img = img.resize((120, 160))
+    image_val.append(img)
+    plt.close("all")
+image_val = np.array(image_val)
+
+fix_shape = []
+for i, image in enumerate(image_train):
+    image = image.transpose((2, 0, 1))
+    fix_shape.append(image)
+fix_shape = np.array(fix_shape)
+
+fix_shape_val = []
+for i, image in enumerate(image_val):
+    image = image.transpose((2, 0, 1))
+    fix_shape_val.append(image)
+fix_shape_val = np.array(fix_shape_val)
+
+image_train = fix_shape
+image_val = fix_shape_val
+
+fix_shape.shape, fix_shape_val.shape
