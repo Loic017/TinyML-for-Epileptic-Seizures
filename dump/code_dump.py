@@ -142,3 +142,41 @@ image_train = fix_shape
 image_val = fix_shape_val
 
 fix_shape.shape, fix_shape_val.shape
+
+
+from sklearn import metrics
+
+y_true, y_score = [], []
+
+for i in actual:
+    for j in i:
+        y_true.append(j.to("cpu"))
+
+for i in predicted:
+    for j in i:
+        if j[0] > j[1]:
+            y_score.append(0)
+        else:
+            y_score.append(1)
+
+# y_true = y_true.detach().cpu()
+# y_score = y_score.detach().cpu()
+
+fpr, tpr, thresholds = metrics.roc_curve(y_true=y_true, y_score=y_score)
+roc_auc = metrics.auc(fpr, tpr)
+# dis = metrics.RocCurveDisplay(fpr=fpr, tpr=tpr, roc_auc=roc_auc)
+# dis.plot()
+
+s = 55
+m = nn.Softmax(dim=1)
+a = m(predicted_test[s])
+a1 = a[0]
+a11 = round(float(a1[0]), 10)
+a12 = round(float(a1[1]), 10)
+
+a2 = a[1]
+a21 = round(float(a2[0]), 10)
+a22 = round(float(a2[1]), 10)
+print(a11, a12)
+print(a21, a22)
+print(actual_test[s])
