@@ -180,3 +180,41 @@ a22 = round(float(a2[1]), 10)
 print(a11, a12)
 print(a21, a22)
 print(actual_test[s])
+
+
+n_mfcc = n_mels
+
+mfccs_train = []
+for i, channels in enumerate(train_db_mean):
+    mfccs_train.append(
+        librosa.feature.mfcc(
+            S=channels,
+            n_mfcc=n_mfcc,
+        )
+    )
+mfccs_train = np.array(mfccs_train)
+
+mfccs_val = []
+for i, channels in enumerate(val_db_mean):
+    mfccs_val.append(
+        librosa.feature.mfcc(
+            S=channels,
+            n_mfcc=n_mfcc,
+        )
+    )
+mfccs_val = np.array(mfccs_val)
+
+mfccs_test = []
+for i, channels in enumerate(test_db_mean):
+    mfccs_test.append(
+        librosa.feature.mfcc(
+            S=channels,
+            n_mfcc=n_mfcc,
+        )
+    )
+mfccs_test = np.array(mfccs_test)
+
+mfccs = librosa.feature.mfcc(S=train_db_mean[x], sr=250, n_mels=n_mels, fmax=30, fmin=0)
+plt.xticks([])
+plt.yticks([])
+plt.imshow(mfccs)
